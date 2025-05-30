@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Data Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Table Data Manager</h1>
+            <div class="toolbar">
+                <button id="newDoc">New Document</button>
+                <button id="saveDoc">Save Document</button>
+                <button id="loadDoc">Load Document</button>
+                <button id="manageTemplates">Manage Templates</button>
+            </div>
+        </header>
+        
+        <div class="workspace">
+            <div class="document-info">
+                <input type="text" id="docName" placeholder="Untitled Document">
+            </div>
+            
+            <div class="table-controls">
+                <button id="addRow">Add Row</button>
+                <button id="addColumn">Add Column</button>
+                <button id="removeRow">Remove Row</button>
+                <button id="removeColumn">Remove Column</button>
+            </div>
+            
+            <div class="table-container">
+                <table id="dataTable" contenteditable="true">
+                    <thead>
+                        <tr>
+                            <th>Header 1</th>
+                            <th>Header 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data 1</td>
+                            <td>Data 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for template management -->
+    <div id="templateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Template Management</h2>
+            <div class="template-list" id="templateList">
+                <!-- Templates will be listed here -->
+            </div>
+            <div class="template-actions">
+                <button id="createTemplate">Create New Template</button>
+                <button id="applyTemplate">Apply Selected Template</button>
+                <button id="deleteTemplate">Delete Template</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for document loading -->
+    <div id="loadModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Load Document</h2>
+            <div class="document-list" id="documentList">
+                <!-- Documents will be listed here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
