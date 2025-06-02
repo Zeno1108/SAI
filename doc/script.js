@@ -1,0 +1,41 @@
+/ Get the necessary DOM elements
+const tableBody = document.getElementById('table-body');
+const createButton = document.getElementById('create-btn');
+const saveButton = document.getElementById('save-btn');
+
+// Array to store the table data
+let tableData = [];
+
+// Function to create a new row in the table
+function createRow() {
+const newRow = document.createElement('tr');
+
+// Create cells for the new row
+const nameCell = document.createElement('td');
+const descriptionCell = document.createElement('td');
+const actionCell = document.createElement('td');
+
+// Append the cells to the new row
+newRow.appendChild(nameCell);
+newRow.appendChild(descriptionCell);
+newRow.appendChild(actionCell);
+
+// Append the new row to the table body
+tableBody.appendChild(newRow);
+
+// Add the new row to the tableData array
+tableData.push({
+name: '',
+description: ''
+});
+}
+
+// Function to save the table data
+function saveData() {
+// Save the table data to local storage or a server
+console.log(tableData);
+}
+
+// Event listeners
+createButton.addEventListener('click', createRow);
+saveButton.addEventListener('click', saveData);
